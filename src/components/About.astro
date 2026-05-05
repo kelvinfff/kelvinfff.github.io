@@ -1,0 +1,101 @@
+<section id="about" class="section">
+  <div class="container">
+    <p class="section-label">About</p>
+    <h2 class="section-title">Where hardware meets automation</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>
+          Computer Science student at FACAPE with a solid background in IT
+          fundamentals, including hardware and technical support. This
+          hands-on experience has given me a deep understanding of system
+          stability and the critical importance of troubleshooting in
+          high-pressure environments.
+        </p>
+        <p>
+          Currently, I am pivoting my passion for technology toward the
+          DevOps culture. I am in a career transition phase, dedicating my
+          studies to bridging the gap between development and operations
+          through automation. My focus is on mastering tools that ensure
+          agile delivery and robust environments, leveraging the logical
+          reasoning I've developed over the years to optimize workflows.
+        </p>
+      </div>
+      <div class="about-highlights">
+        <div class="highlight">
+          <span class="highlight-icon">🔧</span>
+          <span class="highlight-label">3 years</span>
+          <span class="highlight-sub">IT Support</span>
+        </div>
+        <div class="highlight">
+          <span class="highlight-icon">🎓</span>
+          <span class="highlight-label">CS Student</span>
+          <span class="highlight-sub">FACAPE</span>
+        </div>
+        <div class="highlight">
+          <span class="highlight-icon">🚀</span>
+          <span class="highlight-label">DevOps</span>
+          <span class="highlight-sub">In Transition</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .about-text p {
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    font-size: 15px;
+  }
+
+  .about-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .highlight {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+  }
+
+  .highlight-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .highlight-label {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .highlight-sub {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .about-content {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .about-highlights {
+      flex-direction: row;
+    }
+    .highlight {
+      flex: 1;
+    }
+  }
+</style>

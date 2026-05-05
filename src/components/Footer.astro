@@ -1,0 +1,27 @@
+<footer class="footer">
+  <div class="container">
+    <p class="footer-text">
+      Built with <span class="text-accent">Astro</span> &bull;
+      Deployed via <span class="text-accent">GitHub Actions</span> &bull;
+      &copy; {new Date().getFullYear()} Kelvin Fernandes
+    </p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding: 32px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .footer-text {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: center;
+  }
+
+  .text-accent {
+    color: var(--accent);
+  }
+</style>

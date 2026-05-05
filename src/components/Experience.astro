@@ -1,0 +1,140 @@
+---
+const experiences = [
+  {
+    title: "IT Support Internship",
+    company: "Plenus — Colégio e Cursos",
+    period: "Nov 2025 — Apr 2026",
+    description:
+      "Maintained computers and peripherals at Plenus and provided technical support to interns, staff, teachers, and students. Managed hardware inventory and diagnosed system-level issues across a multi-classroom environment.",
+    tags: ["Hardware", "Technical Support", "Troubleshooting"],
+  },
+  {
+    title: "IT Support Internship",
+    company: "Faculdade de Petrolina (FACAPE)",
+    period: "Oct 2024 — Dec 2025",
+    description:
+      "Maintained computers and peripherals at the university and provided technical support to interns, staff, professors, and students. Developed documentation practices and streamlined equipment setup procedures.",
+    tags: ["Hardware", "Documentation", "Help Desk"],
+  },
+  {
+    title: "Back-End Development Internship",
+    company: "Inova Tech Jr",
+    period: "Sep 2024 — Mar 2025",
+    description:
+      "Developed applications focused on micro-entrepreneurs in the São Francisco Valley region. Built server-side logic, managed deployments, and collaborated on version-controlled codebases.",
+    tags: ["Python", "JavaScript", "Git", "Vercel"],
+  },
+];
+---
+
+<section id="experience" class="section">
+  <div class="container">
+    <p class="section-label">Experience</p>
+    <h2 class="section-title">Where I've been</h2>
+    <div class="timeline">
+      {
+        experiences.map((exp) => (
+          <div class="experience-card card">
+            <div class="exp-header">
+              <div>
+                <h3 class="exp-title">{exp.title}</h3>
+                <p class="exp-company">{exp.company}</p>
+              </div>
+              <span class="exp-period">{exp.period}</span>
+            </div>
+            <p class="exp-desc">{exp.description}</p>
+            <div class="exp-tags">
+              {exp.tags.map((tag: string) => <span class="tag">{tag}</span>)}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+  }
+
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: var(--border);
+  }
+
+  .experience-card {
+    margin-left: 44px;
+    position: relative;
+  }
+
+  .experience-card::before {
+    content: "";
+    position: absolute;
+    left: -33px;
+    top: 24px;
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+    border: 2px solid var(--bg-primary);
+  }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+
+  .exp-title {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .exp-company {
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 500;
+    margin-top: 2px;
+  }
+
+  .exp-period {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-muted);
+    white-space: nowrap;
+    margin-top: 4px;
+  }
+
+  .exp-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .exp-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  @media (max-width: 768px) {
+    .experience-card {
+      margin-left: 36px;
+    }
+    .exp-header {
+      flex-direction: column;
+    }
+  }
+</style>

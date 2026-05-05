@@ -1,0 +1,94 @@
+---
+const skillGroups = [
+  {
+    label: "Languages",
+    skills: ["Python", "JavaScript", "C", "Java", "SQL", "HTML", "CSS"],
+  },
+  {
+    label: "Infrastructure & Cloud",
+    skills: ["Linux", "Docker", "Git", "Cloud"],
+  },
+  {
+    label: "Currently Learning",
+    skills: ["CI/CD", "Kubernetes", "Terraform"],
+    highlight: true,
+  },
+];
+---
+
+<section id="skills" class="section">
+  <div class="container">
+    <p class="section-label">Skills</p>
+    <h2 class="section-title">Tools of the trade</h2>
+    <div class="skill-groups">
+      {
+        skillGroups.map((group) => (
+          <div class={`skill-group ${group.highlight ? "learning" : ""}`}>
+            <h3 class="skill-group-label">
+              {group.label}
+              {group.highlight && <span class="blink">_</span>}
+            </h3>
+            <div class="skill-tags">
+              {group.skills.map((skill) => (
+                <span class={`tag ${group.highlight ? "tag-learning" : ""}`}>
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .skill-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .skill-group {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+  }
+
+  .skill-group.learning {
+    border-color: var(--accent);
+    background: var(--accent-glow);
+  }
+
+  .skill-group-label {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+
+  .blink {
+    animation: blink 1s step-end infinite;
+    color: var(--accent-green);
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tag-learning {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+</style>

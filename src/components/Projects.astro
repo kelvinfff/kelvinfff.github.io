@@ -1,0 +1,112 @@
+---
+const projects = [
+  {
+    title: "CI/CD Pipeline Lab",
+    status: "Coming Soon",
+    description:
+      "End-to-end CI/CD pipeline using GitHub Actions, Docker, and automated testing — built and documented from scratch.",
+    icon: "⚙",
+    tags: ["GitHub Actions", "Docker", "CI/CD"],
+  },
+  {
+    title: "Kubernetes Cluster Playground",
+    status: "Coming Soon",
+    description:
+      "Local Kubernetes cluster with monitoring, logging, and auto-scaling demonstrations using Minikube and Helm charts.",
+    icon: "☸",
+    tags: ["Kubernetes", "Helm", "Monitoring"],
+  },
+  {
+    title: "Infrastructure as Code",
+    status: "Coming Soon",
+    description:
+      "Terraform configurations for provisioning cloud resources on AWS — reproducible, versioned, and documented.",
+    icon: "🏗",
+    tags: ["Terraform", "AWS", "IaC"],
+  },
+  {
+    title: "Automated Monitoring Stack",
+    status: "Coming Soon",
+    description:
+      "Prometheus + Grafana dashboard for real-time system metrics with alerting rules and incident response playbooks.",
+    icon: "📊",
+    tags: ["Prometheus", "Grafana", "Alerting"],
+  },
+];
+---
+
+<section id="projects" class="section">
+  <div class="container">
+    <p class="section-label">Projects</p>
+    <h2 class="section-title">Building in public</h2>
+    <div class="project-grid">
+      {
+        projects.map((project) => (
+          <div class="project-card card">
+            <span class="project-icon">{project.icon}</span>
+            <h3 class="project-title">{project.title}</h3>
+            <span class="project-status">{project.status}</span>
+            <p class="project-desc">{project.description}</p>
+            <div class="project-tags">
+              {project.tags.map((tag) => <span class="tag">{tag}</span>)}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    cursor: default;
+  }
+
+  .project-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  .project-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .project-status {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent-green);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+
+  .project-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 16px;
+    flex: 1;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  @media (max-width: 768px) {
+    .project-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
